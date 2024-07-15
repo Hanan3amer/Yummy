@@ -1,0 +1,10 @@
+@media screen and (max-width: 780px) {
+    .countdown {
+        height: 80vh;
+    }
+
+    .col-md-3 {
+        position: relative;
+        left: 100px;
+    }
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yummy</title>
+    <link rel="icon" href="assests/logo.png">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-black">
+    <div class="loading" id="reload"></div>
+    <div class="side-nav d-flex">
+        <div class="container bg-black aside">
+            <div class="nav-content d-flex flex-column justify-content-between">
+                <div class="nav-links  d-flex flex-column p-2">
+                    <li class="text-decoration-none text-white py-2 list-unstyled li1" id="search">Search</li>
+                    <li class="text-decoration-none text-white  py-2 list-unstyled li2" id="cat">Categories</li>
+                    <li class="text-decoration-none text-white  py-2 list-unstyled li3" id="areas">Area</li>
+                    <li class="text-decoration-none text-white  py-2 list-unstyled li4" id="ingredients">Ingredients</li>
+                    <li class="text-decoration-none text-white  py-2 list-unstyled li5" id="contacts">Contact Us</li>
+                </div>
+                <div class="social">
+                    <ul class="list-unstyled d-flex gap-2 text-white">
+                        <li><i class="fa-brands fa-facebook"></i></li>
+                        <li><i class="fa-brands fa-twitter"></i></li>
+                        <li><i class="fa-solid fa-globe"></i></li>
+                    </ul>
+                    <p class="text-white">Copyright Â© 2019 All Rights
+                        <br>
+                        Reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="open">
+            <div class="container bg-white">
+                <div
+                    class="open-content d-flex justify-content-between flex-column justify-content-center align-items-center">
+                    <div class="yummy py-3">
+                        <img src="assests/logo.png">
+                    </div>
+                    <div class="close-icon">
+                        <i class="fa-solid fa-close fa-2x d-none" id="close"></i>
+                        <i class="fa-solid fa-bars fa-2x d-block" id="open"></i>
+                    </div>
+                    <div class="footer-icons">
+                        <ul class="list-unstyled">
+                            <li> <i class="fa-solid fa-globe"></i></li>
+                            <li><i class="fa-solid fa-share-alt"></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="home" class="p-5 d-block">
+        <div class="container">
+            <div class="row d-flex align-items-center" id="row">
+
+            </div>
+        </div>
+    </section>
+    <section class="p-5 d-none" id="fooddetails">
+        <div class="container">
+            <div class="row d-flex" id="detailrow">
+
+            </div>
+        </div>
+    </section>
+    <section id="searchpage" class="d-none">
+        <div class="search-page p-4">
+            <div class="container w-75">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div class="col-md-6">
+                        <div class="by-name">
+                            <input placeholder="Search By Name" class="form-control bg-transparent one" id="byname">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="by-letter">
+                            <input placeholder="Search By First Letter" class="form-control bg-transparent one"
+                                id="byletter">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row" id="searchrow">
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section id="categories" class="d-none">
+        <div class="container">
+            <div class="row" id="catrow">
+
+            </div>
+        </div>
+    </section>
+    <section id="filtermeal" class="d-none">
+        <div class="container">
+            <div class="row" id="mealsContainer">
+
+            </div>
+        </div>
+    </section>
+    <section id="area" class="d-none">
+        <div class="container">
+            <div class="row" id="arearow">
+
+            </div>
+        </div>
+    </section>
+    <section id="Ingredients" class="d-none">
+        <div class="container">
+            <div class="row" id="Ingredientsrow"></div>
+        </div>
+    </section>
+    <section id="Ingredientde" class="d-none">
+        <div class="container">
+            <div class="row" id="Ingred"></div>
+        </div>
+    </section>
+    <section id="contact" class="d-none">
+        <div class="container text-center">
+            <form>
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div class="col-md-6">
+                        <input class="form-control my-3 is-invalid" id="name" placeholder="Enter Your Name" type="text" oninput="validation(this)">
+                        <div class="alert alert-danger p-2 d-none">special Characters not allowed!</div>
+                        <input class="form-control my-3" id="phone" placeholder="Enter Your Phone" type="tel" oninput="validation(this)">
+                        <div class="alert alert-danger p-2 d-none">example:+12345678901</div>
+                        <input class="form-control my-3" id="password" placeholder="Enter Your password"
+                            type="password" oninput="validation(this)">
+                            <div class="alert alert-danger p-2 d-none">write strong pass</div> 
+                    </div>
+                    <div class="col-md-6">
+                        <input class="form-control my-3" id="email" placeholder="Enter Your Email" type="email"oninput="validation(this)">
+                        <div class="alert alert-danger p-2 d-none">example:hhh@ll.com</div> 
+                        <input class="form-control my-3" id="age" placeholder="Enter Your Age" type="number"oninput="validation(this)">
+                        <div class="alert alert-danger p-2 d-none">Not Valid number!</div> 
+                        <input class="form-control my-3" id="repassword" placeholder="Repassword" type="password" oninput="validationpass(this)">
+                        <div class="alert alert-danger p-2 d-none">pass not match</div> 
+                    </div>
+                </div>
+                <button class="btn btn-outline-danger mx-auto" id="submitButtonId" disabled type="submit">Submit</button>
+            </form>
+        </div>
+        </div>
+    </section>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
