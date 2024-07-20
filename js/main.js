@@ -1,11 +1,13 @@
 let width = $('.aside').outerWidth()
 $('.side-nav').css({ left: `-${width}px` })
+$('.nav-links li').slideUp(300);
 document.querySelector("#close").addEventListener('click', function () {
     $('.side-nav').animate({ left: `-${width}px` }, 500)
     document.querySelector("#close").classList.add("d-none")
     document.querySelector("#close").classList.remove("d-block")
     document.querySelector("#open").classList.remove("d-none")
     document.querySelector("#open").classList.add("d-block")
+    $('.nav-links li').slideUp(300);
 })
 document.querySelector("#open").addEventListener("click", function () {
     $('.side-nav').animate({ left: `0px` }, 500)
@@ -13,6 +15,11 @@ document.querySelector("#open").addEventListener("click", function () {
     document.querySelector("#close").classList.add("d-block")
     document.querySelector("#open").classList.add("d-none")
     document.querySelector("#open").classList.remove("d-block")
+    let delay = 0;
+    $('.nav-links li').each(function () {
+        $(this).delay(delay).slideDown(300);
+        delay += 100;
+    });
 })
 // ------------------------------------------------------------------------ 1-Home page-----------------------------------------------------------------------------
 let reloader = document.querySelector("#reload")
@@ -428,7 +435,7 @@ document.querySelector("#contacts").addEventListener("click", function () {
     document.querySelector("#Ingredientde").classList.replace("d-block", "d-none")
     document.querySelector("#contact").classList.replace("d-none", "d-block")
 })
-let submitBtn = document.getElementById('submitBtn');
+let submitButtonId = document.getElementById('submitButtonId');
 let name = document.querySelector("#name")
 let password = document.querySelector("#password")
 let repassword = document.querySelector("#repassword")
@@ -447,12 +454,14 @@ function validation(ele) {
         ele.classList.add("is-valid")
         ele.classList.remove("is-invalid")
         ele.nextElementSibling.classList.replace("d-block", "d-none")
+        submitButtonId.classList.remove("disabled");
         return true
     }
     else {
         ele.classList.add("is-invalid")
         ele.classList.remove("is-valid")
         ele.nextElementSibling.classList.replace("d-none", "d-block")
+        submitButtonId.classList.add("disabled");
         return false
     }
 }
@@ -461,24 +470,14 @@ function validationpass() {
         repassword.classList.add("is-invalid")
         repassword.classList.remove("is-valid")
         repassword.nextElementSibling.classList.replace("d-none", "d-block")
+        submitButtonId.classList.add("disabled");
         return false
     }
     else {
         repassword.classList.add("is-valid")
         repassword.classList.remove("is-invalid")
         repassword.nextElementSibling.classList.replace("d-block", "d-none")
+        submitButtonId.classList.remove("disabled");
         return true
     }
 }
-function submit() {
-    if (validation() && validationpass()) {
-        submitBtn.removeAttribute("disabled");
-        return true
-    }
-    else {
-
-        submitBtn.setAttribute("disabled", "");
-        return false
-    }
-}
-submit()
