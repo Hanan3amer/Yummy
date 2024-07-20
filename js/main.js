@@ -433,6 +433,7 @@ document.querySelector("#contacts").addEventListener("click", function () {
     document.querySelector("#area").classList.replace("d-block", "d-none")
     document.querySelector("#filtermeal").classList.replace("d-block", "d-none")
     document.querySelector("#Ingredientde").classList.replace("d-block", "d-none")
+    document.querySelector("#Ingredients").classList.replace("d-block", "d-none")
     document.querySelector("#contact").classList.replace("d-none", "d-block")
 })
 let submitButtonId = document.getElementById('submitButtonId');
